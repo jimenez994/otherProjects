@@ -1,0 +1,16 @@
+package com.zeus.DevC.controllers;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@ResController
+@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/")
+public class UserController {
+
+	@GetMapping("")
+	public String hello() {
+		return "hello";
+	}
+}
