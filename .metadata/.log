@@ -161,3 +161,192 @@ java.net.UnknownHostException: dist.springsource.com: nodename nor servname prov
 	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
 	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.103
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.168
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.512
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.512
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.543
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.543
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.601
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.601
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.675
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.675
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.678
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.679
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.701
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.701
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.751
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.751
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.752
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.752
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:31.815
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.matchFound(ConsoleLineNotifier.java:122)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:139)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:31.815
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2018-05-04 22:32:34.744
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+!STACK 1
+org.eclipse.debug.core.DebugException: Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.
+	at org.eclipse.debug.internal.core.LaunchManager.createDebugException(LaunchManager.java:925)
+	at org.eclipse.debug.internal.core.LaunchManager.getInfo(LaunchManager.java:1395)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getInfo(LaunchConfiguration.java:470)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.getType(LaunchConfiguration.java:640)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.isMavenProcess(MavenConsoleLineTracker.java:142)
+	at org.eclipse.m2e.internal.launch.MavenConsoleLineTracker.lineAppended(MavenConsoleLineTracker.java:85)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.lineAppended(ConsoleLineNotifier.java:130)
+	at org.eclipse.debug.internal.ui.views.console.ConsoleLineNotifier.disconnect(ConsoleLineNotifier.java:75)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$CompiledPatternMatchListener.dispose(ConsolePatternMatcher.java:200)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher.disconnect(ConsolePatternMatcher.java:262)
+	at org.eclipse.ui.internal.console.ConsolePatternMatcher$MatchJob.run(ConsolePatternMatcher.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.debug.core 4 5012 2018-05-04 22:32:34.744
+!MESSAGE Launch configuration test - TestApplication at file:/Users/Admin/Desktop/codingdojo/projects/DevC/.metadata/.plugins/org.eclipse.debug.core/.launches/test%20-%20TestApplication.launch does not exist.

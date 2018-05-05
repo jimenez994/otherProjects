@@ -19,14 +19,17 @@ public class UserService {
 	private UserRepository userRepo;
 	
 	public Map<String, String> create(User user) {
+		System.out.println(bcrypt);
 		User eUser  = userRepo.findByEmail(user.getEmail());
 		Map<String,String> msg = new HashMap<String, String>();
 		if (eUser == null ) {
-			user.setPassword(bcrypt.encode( user.getPassword()));
+			System.out.println("***********2");
+//			user.setPassword(bcrypt.encode( user.getPassword()));
 			userRepo.save(user);
 			msg.put("message", "You successfully created a User");
 			return msg;
 		}
+		System.out.println("***********3");
 		msg.put("message", "email already exists in out database");
 		return msg;
 	}
