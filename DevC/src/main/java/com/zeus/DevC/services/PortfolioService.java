@@ -22,7 +22,8 @@ public class PortfolioService {
 //	Portfolio CRUD
 	public Map<String, String> create(Portfolio portfolio, User user){
 		Map<String,String> msg = new HashMap<String, String>();
-		if(user.getPortfolio() == null) {
+		Portfolio checkP = _pR.findByUserId(user.getId());
+		if(checkP == null) {
 			if(portfolio.getHandle().isEmpty()) {
 				msg.put("handle", "Handle is required");
 			}else if(_pR.findByHandle(portfolio.getHandle()) != null) {
@@ -50,14 +51,11 @@ public class PortfolioService {
 	public Portfolio userPorfolio(User user) {
 			Portfolio portfolio = _pR.findByUserId(user.getId());
 //			Portfolio portfolio = user.getPortfolio();
-			System.out.println(portfolio);
 			if(portfolio != null) {
 //			portfolio.setEducations(null);
 			portfolio.setUser(null);
 //			portfolio.setExperiences(null);
-			System.out.println("********1");
 			}
-			System.out.println("********2");
 			return portfolio;
 	}
 	public Portfolio findByHandle(String handle) {
@@ -82,14 +80,14 @@ public class PortfolioService {
 			msg.put("handle", "Handle is already taken");
 		}else {
 			_pR.save(portfolio);
-			msg.put("success", "You have update");
+			msg.put("success", "You have update your portfolio");
 			return msg;
 		}
 		return msg;
 	}
 	
 	public ArrayList<Portfolio> all(){
-		ArrayList<Portfolio> ports = _pR.findAll();
+		ArrayList<Portfolio> ports = _pR.findAll();;
 		ArrayList<Portfolio> uPorts = new ArrayList<Portfolio>();
 		for (Portfolio port : ports) {
 			port.setUser(null);
@@ -97,11 +95,4 @@ public class PortfolioService {
 		}
 		return uPorts;
 	}
-	
-	
-	
-	
-	
-	
-	
 }

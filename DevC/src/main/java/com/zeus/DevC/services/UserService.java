@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.zeus.DevC.models.Portfolio;
 import com.zeus.DevC.models.User;
 import com.zeus.DevC.repositories.UserRepository;
 
@@ -96,7 +97,13 @@ public class UserService {
 	}
 	
 	public ArrayList<User> all(){
-		return userRepo.findAll();
+		ArrayList<User> users = userRepo.findAll();
+		ArrayList<User> uUsers = new ArrayList<User>();
+		for (User user : users) {
+			user.setPortfolio(null);
+			uUsers.add(user);
+		}
+		return uUsers;
 	}
 	
 	public User findById(long id) {

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.zeus.DevC.models.Portfolio;
 import com.zeus.DevC.models.User;
 import com.zeus.DevC.services.PortfolioService;
@@ -28,6 +29,7 @@ public class PortfolioController {
 	private PortfolioService _pS;
 	
 	@Autowired UserService _Us;
+	Gson gson = new Gson();
 	
 	@PostMapping("/new")
 	public Map<String, String> create(@RequestBody Portfolio portfolio, HttpSession session){
@@ -43,7 +45,6 @@ public class PortfolioController {
 	@GetMapping("/portfolio")
 	public Portfolio userPortfolio(HttpSession session) {
 		User user = _Us.findById((long)session.getAttribute("user_id"));
-		
 		System.out.println(user.getPortfolio());
 		return _pS.userPorfolio(user);
 
@@ -55,7 +56,8 @@ public class PortfolioController {
 	}
 	@GetMapping("/byId/{id}")
 	public Portfolio findById(@PathVariable("id") long id) {
-		return _pS.findById(id);
+		System.out.println(gson.toJson(_pS.findById(id)));
+		return null;
 	}
 	@PutMapping("/update/{id}")
 	public Map<String, String> update(@RequestBody Portfolio portfolio){
