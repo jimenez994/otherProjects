@@ -3,9 +3,12 @@ package com.zeus.DevC.services;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zeus.DevC.models.User;
@@ -13,41 +16,76 @@ import com.zeus.DevC.repositories.UserRepository;
 
 @Service
 public class UserService {
-	private BCryptPasswordEncoder bcrypt;
 	
-	@Autowired 
+	String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+	Pattern pattern = Pattern.compile(regex);
+	
+	private BCryptPasswordEncoder bcrypt; 
 	private UserRepository userRepo;
 	
-	public Map<String, String> create(User user) {
-		System.out.println(bcrypt);
-		User eUser  = userRepo.findByEmail(user.getEmail());
+	public UserService(UserRepository userRepo){
+		this.userRepo = userRepo;
+		this.bcrypt = new BCryptPasswordEncoder();
+	}
+	
+//	User Crud
+	public Map<String, String> create(User user){
+//		Dictionary of messages
 		Map<String,String> msg = new HashMap<String, String>();
+		
+		User eUser  = userRepo.findByEmail(user.getEmail());
 		if (eUser == null ) {
-			System.out.println("***********2");
-//			user.setPassword(bcrypt.encode( user.getPassword()));
-			userRepo.save(user);
-			msg.put("message", "You successfully created a User");
+			Matcher matcher = pattern.matcher(user.getEmail());
+//			Checking Email
+			if(!matcher.matches()) {
+				msg.put("email", "Email is invalid");
+			}
+//			Checking name
+			if(user.getName().length() < 1) {
+				msg.put("name", "Name field is required");
+			}
+//			Checking password
+			if(user.getPassword().length() < 5) {
+				msg.put("password", "Password must be at least 6 characters");
+			}
+//			If credentials is valid -> register user
+			if(msg.isEmpty()) {
+				user.setPassword(bcrypt.encode( user.getPassword()));
+				userRepo.save(user);
+				msg.put("user_id", user.getId()+"");
+				msg.put("success", "You successfully created a User");
+			}
 			return msg;
 		}
-		System.out.println("***********3");
-		msg.put("message", "email already exists in out database");
+		msg.put("message", "email already exists in our database");
 		return msg;
 	}
-	public Map<String, String> isMatch(String email,String password){
-		User eUser = userRepo.findByEmail(email);
+	
+	
+	public Map<String, String> login(String email,String password){
 		Map<String,String> msg = new HashMap<String, String>();
-		if(eUser != null) {
+		User eUser = userRepo.findByEmail(email);
+		Matcher matcher = pattern.matcher(email);
+//		Checking Password
+		if(password.isEmpty()) {
+			msg.put("password", "Password is required");
+		}
+//		Checking Email
+		if(!matcher.matches()) {
+			msg.put("email", "Email is invalid");
+		}else if(eUser == null ) {
+			msg.put("email", "Email is not in database");
+		}else {
 			if(bcrypt.matches(password, eUser.getPassword())) {
-				msg.put("message", "success");
+				msg.put("success", "success");
+				msg.put("user_id", eUser.getId()+"");
 				return msg;
 			}else {
-				msg.put("message", "password does not match");
+				msg.put("password", "Invalid password");
 				return msg;
 			}
-		}else {
-			msg.put("message", "email does not exist in our database");
-			return msg;
 		}
+		return msg;
 	}
 	
 	public Map<String, String> update(User user){
@@ -62,7 +100,9 @@ public class UserService {
 	}
 	
 	public User findById(long id) {
-		return userRepo.findOne(id);
+		User user = userRepo.findOne(id);
+		user.setPortfolio(null);
+		return user;
 	}
 	
 	public Map<String, String>  delete(long id) {
