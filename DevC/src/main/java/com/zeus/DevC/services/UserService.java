@@ -58,7 +58,7 @@ public class UserService {
 			}
 			return msg;
 		}
-		msg.put("message", "email already exists in our database");
+		msg.put("email", "Email is already taken");
 		return msg;
 	}
 	

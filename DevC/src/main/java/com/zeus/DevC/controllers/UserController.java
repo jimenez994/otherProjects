@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,20 +21,21 @@ import com.zeus.DevC.models.User;
 import com.zeus.DevC.services.UserService;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/")
+@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
 	private UserService _userS;
 
-	@GetMapping("/users")
+	@GetMapping("/all")
 	public ArrayList<User> all(){
 		return _userS.all();
 	}
 	
-	@PostMapping("/new")
+	@PostMapping("/register")
 	public Map<String, String> create(@RequestBody User user,HttpSession session){
+		System.out.println("i got here????");
 		Map<String, String> res = _userS.create(user);
 		if(res.get("user_id") != null) {
 			session.setAttribute("user_id", Long.parseLong(res.get("user_id")));
@@ -50,17 +52,17 @@ public class UserController {
 		return res;
 	}
 	
-	@GetMapping("/user/{id}")
+	@GetMapping("/find/{id}")
 	public User user(@PathVariable("id") Long id) {
 		return _userS.findById(id);
 	}
 	
-	@PutMapping("/user")
+	@PutMapping("/update")
 	public Map<String, String> update(@RequestBody User user){
 		return _userS.update(user);
 	}
 	
-	@DeleteMapping("/user/{id}")
+	@DeleteMapping("/delete/{id}")
 	public Map<String, String> deleteUser(@PathVariable("id") Long id){
 		return _userS.delete(id);
 	}
