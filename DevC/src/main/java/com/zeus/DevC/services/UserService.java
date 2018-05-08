@@ -54,6 +54,9 @@ public class UserService {
 				user.setPassword(bcrypt.encode( user.getPassword()));
 				userRepo.save(user);
 				msg.put("user_id", user.getId()+"");
+				msg.put("name", user.getName());
+				msg.put("email", user.getEmail());
+				msg.put("avatar", "something");
 				msg.put("success", "You successfully created a User");
 			}
 			return msg;
@@ -80,6 +83,9 @@ public class UserService {
 			if(bcrypt.matches(password, eUser.getPassword())) {
 				msg.put("success", "success");
 				msg.put("user_id", eUser.getId()+"");
+				msg.put("name", eUser.getName());
+				msg.put("email", eUser.getEmail());
+				msg.put("avatar", "something");				
 				return msg;
 			}else {
 				msg.put("password", "Invalid password");

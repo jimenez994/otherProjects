@@ -14,6 +14,8 @@ import './App.css';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from './actions/authActions';
 
+import Dashboard from './conponents/dashboard/Dashboard';
+
 // this to check if user is in session
 // chaeck for tokem
 if(localStorage.IdKey){
@@ -35,21 +37,20 @@ if(localStorage.IdKey){
 
 class App extends Component {
   render() {
-    return (
-      <Provider store={store}>
+    return <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar/>
-            <Route exact path="/" component={Landing}/>
+            <Navbar />
+            <Route exact path="/" component={Landing} />
             <div className="container">
-              <Route exact path="/register" component={Register}/>
-              <Route exact path="/login" component={Login}/>
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </div>
-            <Footer/>
+            <Footer />
           </div>
         </Router>
-      </Provider>      
-    );
+      </Provider>;
   }
 }
 

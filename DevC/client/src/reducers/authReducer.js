@@ -5,7 +5,7 @@ const initialState = {
     user: {}
     
 }
-console.log(this.user);
+console.log(localStorage);
 export default function(state = initialState, action){
     switch (action.type) {
         case SET_CURRENT_USER:

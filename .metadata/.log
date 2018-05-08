@@ -1220,3 +1220,9 @@ Binding(COMMAND+D,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-05-08 15:44:42.422
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-05-08 15:44:42.505
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

@@ -6,14 +6,18 @@ export const  registerUser = (userData, history) => dispatch => {
      axios
           .post("http://localhost:8080/user/register", userData)
           .then(res => {
-              if(res.data.success){
-                history.push('/login')
-            }else{
-                dispatch({
-                  type: GET_ERRORS,
-                  payload: res.data
-                });
-            }
+                if(res.data.success){
+                    // const token = res.data;
+                    // localStorage.setItem('IdKey', token);
+                    // setAuthToken(token)
+                    // dispatch(setCurrentUser(token))
+                    history.push('/login')
+                }else{
+                    dispatch({
+                    type: GET_ERRORS,
+                    payload: res.data
+                    });
+                }
           })
           .catch(err => console.log(err));
 }
@@ -24,16 +28,13 @@ export const loginUser = userData => dispatch => {
         .then(res => {
             if(res.data.success){                
             // save to localstore
-            console.log(res.data)
-                const  token  = res.data.user_id;
+                const  token  = res.data;
             // set id to localStorage
-                localStorage.setItem('IdKey', token);
+                localStorage.setItem('IdKey', token.user_id);
                 // Set token to auth header
                 setAuthToken(token);
                 // Set current user
                 dispatch(setCurrentUser(token))
-            console.log(token);
-
             }else{
                 dispatch({
                     type: GET_ERRORS,

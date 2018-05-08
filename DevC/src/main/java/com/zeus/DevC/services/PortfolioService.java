@@ -48,13 +48,15 @@ public class PortfolioService {
 		msg.put("fail", "You already have a portfolio");
 		return msg;
 	}
-	public Portfolio userPorfolio(User user) {
-			Portfolio portfolio = _pR.findByUserId(user.getId());
+	public Map<String,String> userPorfolio(User user) {
+			Map<String,String> portfolio = (Map<String, String>) _pR.findByUserId(user.getId());
 //			Portfolio portfolio = user.getPortfolio();
 			if(portfolio != null) {
 //			portfolio.setEducations(null);
-			portfolio.setUser(null);
+			((Portfolio) portfolio).setUser(null);
 //			portfolio.setExperiences(null);
+			}else {
+				portfolio.put("noProfile","Sorry you dont hava a profolio");
 			}
 			return portfolio;
 	}

@@ -47,8 +47,10 @@ public class UserController {
 	public Map<String, String> login(@RequestBody User user,HttpSession session){
 		Map<String, String> res = _userS.login(user.getEmail(), user.getPassword());
 		if(res.get("user_id") != null) {
+			System.out.println("***********2");
 			session.setAttribute("user_id", Long.parseLong(res.get("user_id")));
 		}
+		System.out.println(session.getAttribute("user_id"));
 		return res;
 	}
 	

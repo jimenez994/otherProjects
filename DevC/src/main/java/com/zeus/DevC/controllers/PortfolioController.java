@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ import com.zeus.DevC.services.PortfolioService;
 import com.zeus.DevC.services.UserService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/p")
 public class PortfolioController {
 	
@@ -43,11 +45,12 @@ public class PortfolioController {
 	}
 	
 	@GetMapping("/portfolio")
-	public Portfolio userPortfolio(HttpSession session) {
+	public Map<String, String> userPortfolio(HttpSession session) {
+		System.out.println("***********1");
+		System.out.println(session.getAttribute("user_id")+" this is your id");
 		User user = _Us.findById((long)session.getAttribute("user_id"));
 		System.out.println(user.getPortfolio());
 		return _pS.userPorfolio(user);
-
 	}
 	
 	@GetMapping("/by/Handle/{handle}")
