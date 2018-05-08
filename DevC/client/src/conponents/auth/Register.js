@@ -17,15 +17,23 @@ class Register extends Component {
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);        
     }
+    componentDidMount(){
+        if(this.props.auth.isAuthenticated){
+        this.props.history.push('/dashboard')
+        }
+    }
+
     componentWillReceiveProps(nextProps){
         if(nextProps.errors){
             this.setState({errors: nextProps.errors})
         }
     }
+
     onChange(e){
         // based on the name of the filds it will update the state name:name, email:eamil, password:password
         this.setState({[e.target.name]:e.target.value});
     }
+
     onSubmit(e){
         // this takes out the default dehaviour
         e.preventDefault();
@@ -35,8 +43,8 @@ class Register extends Component {
             password: this.state.password
         }
         this.props.registerUser(newUser, this.props.history);
-       
     }
+
     render() {
         // this is the same as const errors = this.state.errors
         const { errors } = this.state;
