@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import classnames from 'classnames';
-export default class Register extends Component {
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions';
+class Register extends Component {
     constructor(){
         super();
         this.state ={
@@ -13,6 +16,11 @@ export default class Register extends Component {
         // this binds the from with on chenge in order to use this keyword onChange
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);        
+    }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.errors){
+            this.setState({errors: nextProps.errors})
+        }
     }
     onChange(e){
         // based on the name of the filds it will update the state name:name, email:eamil, password:password
@@ -26,18 +34,8 @@ export default class Register extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        axios
-          .post("http://localhost:8080/user/register", newUser)
-          .then(res => {
-              if(res.data.success){
-                console.log(res.data.success)
-            }else{
-                this.setState({errors: res.data})
-                console.log(this.state.errors)
-            }
-          })
-          .catch(err => console.log(err));
-        console.log(newUser)
+        this.props.registerUser(newUser, this.props.history);
+       
     }
     render() {
         // this is the same as const errors = this.state.errors
@@ -106,3 +104,16 @@ export default class Register extends Component {
         );
     }
 }
+Register.protoTypes = { 
+    registerUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    // this comes from index.js in reducer where where auth : auth matches  
+    auth: state.auth,
+    errors: state.errors
+})
+
+export default connect(mapStateToProps, { registerUser })(withRouter(Register));

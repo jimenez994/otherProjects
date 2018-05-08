@@ -11,6 +11,19 @@ import Register from "./conponents/auth/Register";
 import Login from "./conponents/auth/Login";
 import './App.css';
 
+import setAuthToken from './utils/setAuthToken';
+import { setCurrentUser } from './actions/authActions';
+
+// this to check if user is in session
+// chaeck for tokem
+if(localStorage.IdKey){
+  // set auth token header auth
+  setAuthToken(localStorage.IdKey);
+  // get user info
+  // set user and isAithenticated
+  store.dispatch(setCurrentUser(localStorage.IdKey))
+}
+
 class App extends Component {
   render() {
     return (

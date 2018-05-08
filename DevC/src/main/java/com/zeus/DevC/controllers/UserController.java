@@ -35,7 +35,7 @@ public class UserController {
 	
 	@PostMapping("/register")
 	public Map<String, String> create(@RequestBody User user,HttpSession session){
-		System.out.println("i got here????");
+		System.out.println("i got here");
 		Map<String, String> res = _userS.create(user);
 		if(res.get("user_id") != null) {
 			session.setAttribute("user_id", Long.parseLong(res.get("user_id")));
