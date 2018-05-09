@@ -5,7 +5,11 @@ import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS } from './types';
 // get current profile
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading());
-    axios.get("http://localhost:8080/p/portfolio")
+    var IdKey = null
+    if(localStorage.IdKey){
+        IdKey = localStorage.IdKey;
+    }
+    axios.get(`http://localhost:8080/p/portfolio/${IdKey}`)
         .then( res => {
             if(res.data.noProfile){
                 dispatch({
@@ -13,6 +17,8 @@ export const getCurrentProfile = () => dispatch => {
                     payload: {}
                 });
             }else{
+                console.log("********************this is your key");
+                console.log(res.data)
                 dispatch({
                     type: GET_PROFILE,
                     payload: res.data

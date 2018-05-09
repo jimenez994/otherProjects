@@ -5,7 +5,44 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-05-08T20:45:43Z</updated>
+  <updated>2018-05-08T22:51:43Z</updated>
+  <entry>
+    <title>Spring Security OAuth 2.3.3, 2.2.2, 2.1.2, 2.0.15 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/05/08/spring-security-oauth-2-3-3-2-2-2-2-1-2-2-0-15-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2018-05-08:3270</id>
+    <updated>2018-05-08T22:51:43Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I&amp;#8217;m pleased to announce the releases of Spring Security OAuth 2.3.3, 2.2.2, 2.1.2 and 2.0.15. These maintenance releases primarily deliver bug fixes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes, please refer to:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/37?closed=1"&gt;2.3.3 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/32?closed=1"&gt;2.2.2 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/29?closed=1"&gt;2.1.2 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/25?closed=1"&gt;2.0.15 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security-oauth/"&gt;Project Page&lt;/a&gt; |
+&lt;a href="https://github.com/spring-projects/spring-security-oauth/"&gt;GitHub&lt;/a&gt; |
+&lt;a href="http://projects.spring.io/spring-security-oauth/docs/Home.html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security-oauth2"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Spring Session Apple SR2</title>
     <link rel="alternate" href="https://spring.io/blog/2018/05/08/spring-session-apple-sr2" />
@@ -1200,26 +1237,5 @@ The &lt;code&gt;batch&lt;/code&gt; mode now produces a &lt;code&gt;List&amp;lt;b
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-gcp"&gt;Spring Integration AWS Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Spring Cloud Stream Binder for AWS Kinesis Project Page&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-cloud/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Task 2.0.0.RC1 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/04/16/spring-cloud-task-2-0-0-rc1-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Michael Minella</name>
-    </author>
-    <id>tag:spring.io,2018-04-16:3252</id>
-    <updated>2018-04-16T16:09:53Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce that Spring Cloud Task 2.0.0.RC1 is now available on Github and the Pivotal download repository. Many thanks to all of those who contributed to this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-new" class="anchor" name="what-rsquo-s-new"&gt;&lt;/a&gt;What&amp;rsquo;s New?&lt;/h2&gt;
-&lt;p&gt;This release includes upgrades to existing dependencies as well as some nice new features. Let&amp;rsquo;s take a look at what&amp;rsquo;s new in this release.&lt;/p&gt;&lt;h3&gt;&lt;a href="#compatibility-with-spring-cloud-stream-2-0" class="anchor" name="compatibility-with-spring-cloud-stream-2-0"&gt;&lt;/a&gt;Compatibility with Spring Cloud Stream 2.0&lt;/h3&gt;
-&lt;p&gt;Spring Cloud Stream 2.0 was &lt;a href="https://spring.io/blog/2018/04/10/announcing-general-availability-of-spring-cloud-stream-elmhurst-release-2-0-0-release"&gt;released a few days ago&lt;/a&gt; and provides a collection of impressive enhancements. Spring Cloud Task is updated and supports Spring Cloud Stream 2.0&lt;/p&gt;&lt;h3&gt;&lt;a href="#multiple-datasource-sample" class="anchor" name="multiple-datasource-sample"&gt;&lt;/a&gt;Multiple DataSource Sample&lt;/h3&gt;
-&lt;p&gt;A common point of confusion for Spring Cloud Task is how to configure a task application when using multiple DataSource beans. In this release, we provided a sample that demonstrates how that should work. You can find that sample &lt;a href="https://github.com/spring-cloud/spring-cloud-task/tree/master/spring-cloud-task-samples/multiple-datasources"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#features-release-in-previous-milestones" class="anchor" name="features-release-in-previous-milestones"&gt;&lt;/a&gt;Features Release in Previous Milestones&lt;/h3&gt;
-&lt;p&gt;Beyond the above new features, other features that are included in the 2.0 line include the following:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Restricting task instances: Via configuration, you can prevent multiple instances of a task from executing.&lt;/li&gt;
-  &lt;li&gt;Batch jobs fail the task: By setting the &lt;code&gt;spring.cloud.task.batch.failOnJobFailure&lt;/code&gt; flag to &lt;code&gt;true&lt;/code&gt;, if a Spring Batch job executed within the task fails, the task fails as well.&lt;/li&gt;
-&lt;/ul&gt;&lt;h2&gt;&lt;a href="#what-do-you-think" class="anchor" name="what-do-you-think"&gt;&lt;/a&gt;What Do You Think?&lt;/h2&gt;
-&lt;p&gt;We look forward to your feedback on these new features in &lt;a href="https://github.com/spring-cloud/spring-cloud-task/issues"&gt;Github&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-cloud-task"&gt;StackOverflow&lt;/a&gt;, &lt;a href="https://gitter.im/spring-cloud/spring-cloud-task"&gt;Gitter&lt;/a&gt;, or directly via Twitter &lt;a href="https://twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-task/"&gt;Spring Cloud Task Home&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-task"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-cloud-task/docs/2.0.0.RC1/reference/htmlsingle/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

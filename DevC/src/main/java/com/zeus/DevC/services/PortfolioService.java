@@ -7,6 +7,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.zeus.DevC.models.Portfolio;
 import com.zeus.DevC.models.User;
 import com.zeus.DevC.repositories.PortfolioRepository;
@@ -19,6 +21,10 @@ public class PortfolioService {
 	@Autowired
 	private UserService _uS;
 	
+	ObjectMapper oMapper = new ObjectMapper();
+	
+	Gson gson = new Gson();
+
 //	Portfolio CRUD
 	public Map<String, String> create(Portfolio portfolio, User user){
 		Map<String,String> msg = new HashMap<String, String>();
@@ -48,17 +54,27 @@ public class PortfolioService {
 		msg.put("fail", "You already have a portfolio");
 		return msg;
 	}
-	public Map<String,String> userPorfolio(User user) {
-			Map<String,String> portfolio = (Map<String, String>) _pR.findByUserId(user.getId());
+	public Map<String,String> userPorfolio(long id) {
+		System.out.println("*******2");
+		Map<String,String> portfolio = new HashMap<String, String>();
+			Portfolio port =  _pR.findByUserId(id);
+			System.out.println(port);
 //			Portfolio portfolio = user.getPortfolio();
-			if(portfolio != null) {
+		if(port != null) {
 //			portfolio.setEducations(null);
-			((Portfolio) portfolio).setUser(null);
+			port.setUser(null);
 //			portfolio.setExperiences(null);
-			}else {
-				portfolio.put("noProfile","Sorry you dont hava a profolio");
-			}
-			return portfolio;
+			System.out.println("*******3");
+			Map<String, String> map = oMapper.convertValue(port, Map.class);
+			System.out.println(map);
+			return map;
+		}else {
+			System.out.println("*******");
+
+			portfolio.put("noProfile","Sorry you dont hava a profolio");
+		}
+		
+		return portfolio;
 	}
 	public Portfolio findByHandle(String handle) {
 		Portfolio portfolio = _pR.findByHandle(handle);

@@ -23,7 +23,7 @@ import com.zeus.DevC.services.PortfolioService;
 import com.zeus.DevC.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("*")
 @RequestMapping("/p")
 public class PortfolioController {
 	
@@ -33,24 +33,24 @@ public class PortfolioController {
 	@Autowired UserService _Us;
 	Gson gson = new Gson();
 	
-	@PostMapping("/new")
-	public Map<String, String> create(@RequestBody Portfolio portfolio, HttpSession session){
+	@PostMapping("/new/{id}")
+	public Map<String, String> create(@RequestBody Portfolio portfolio, @PathVariable("id") long id){
 		Map<String, String> msg = new HashMap<String, String>();
-		if(session.getAttribute("user_id") != null) {
-			User user = _Us.findById((long)session.getAttribute("user_id"));
-			return _pS.create(portfolio, user);
-		}
+		User user = _Us.findById(id);
+			if(user != null) {
+				return _pS.create(portfolio, user);				
+			}
 		msg.put("fail", 	"Must be login first");
 		return msg;
 	}
 	
-	@GetMapping("/portfolio")
-	public Map<String, String> userPortfolio(HttpSession session) {
-		System.out.println("***********1");
-		System.out.println(session.getAttribute("user_id")+" this is your id");
-		User user = _Us.findById((long)session.getAttribute("user_id"));
-		System.out.println(user.getPortfolio());
-		return _pS.userPorfolio(user);
+	@GetMapping("/portfolio/{id}")
+	public String userPortfolio(HttpSession session, @PathVariable("id") long id) {
+		System.out.println("***********1  " + _pS.userPorfolio(id));
+		String map2 = gson.toJson(_pS.userPorfolio(id));
+
+//		return _pS.userPorfolio(id);
+		return map2;
 	}
 	
 	@GetMapping("/by/Handle/{handle}")

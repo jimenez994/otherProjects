@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import com.zeus.DevC.models.User;
 import com.zeus.DevC.services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin("*")
 @RequestMapping("/user")
 public class UserController {
 	
@@ -35,7 +36,6 @@ public class UserController {
 	
 	@PostMapping("/register")
 	public Map<String, String> create(@RequestBody User user,HttpSession session){
-		System.out.println("i got here");
 		Map<String, String> res = _userS.create(user);
 		if(res.get("user_id") != null) {
 			session.setAttribute("user_id", Long.parseLong(res.get("user_id")));
@@ -47,10 +47,9 @@ public class UserController {
 	public Map<String, String> login(@RequestBody User user,HttpSession session){
 		Map<String, String> res = _userS.login(user.getEmail(), user.getPassword());
 		if(res.get("user_id") != null) {
-			System.out.println("***********2");
 			session.setAttribute("user_id", Long.parseLong(res.get("user_id")));
+			System.out.println(session.getAttribute("user_id") + " * **************5");
 		}
-		System.out.println(session.getAttribute("user_id"));
 		return res;
 	}
 	
