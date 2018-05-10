@@ -11,7 +11,7 @@ class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
-
+    console.log(profile + "  " + loading);
     let dashboardContent;
     if (profile === null || loading){
       dashboardContent = <Spinner/>
@@ -48,7 +48,7 @@ class Dashboard extends Component {
     )
   }
 }
-Dashboard.PropTypes = {
+Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired

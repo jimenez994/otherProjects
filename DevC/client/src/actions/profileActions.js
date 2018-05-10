@@ -13,20 +13,21 @@ export const getCurrentProfile = () => dispatch => {
     axios.get(`http://localhost:8080/p/portfolio/${IdKey}`)
         .then( res => {
                 console.log(res + "*********1");
-            
-            if(res.data.noProfile){
-                console.log(res.data + "*********2");
-                
-                console.log(res.data.noProfile + "*********2");
+            if(res.data.success){
+                 dispatch({
+                   type: GET_PROFILE,
+                   payload: res.data
+                 });
+            }else if(res.data.noProfile){
                 dispatch({
-                    type: GET_ERRORS,
+                    type: GET_PROFILE,
                     payload: {}
                 });
             }else{
                 dispatch({
-                    type: GET_PROFILE,
-                    payload: res.data
-                })
+                    type: GET_ERRORS,
+                    payload: null
+                }); 
             }
         })
         .catch(err => console.log(err))

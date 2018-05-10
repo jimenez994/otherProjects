@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+// Switch is require to use private route
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 // layout
@@ -10,6 +11,8 @@ import Landing from "./conponents/layout/Landing";
 import Register from "./conponents/auth/Register";
 import Login from "./conponents/auth/Login";
 import './App.css';
+// private route checker
+import PrivateRoute from "./conponents/common/PrivateRoute";
 
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from './actions/authActions';
@@ -45,9 +48,11 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/dashboard" component={Dashboard} />
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
             </div>
-            <Footer />
+            <Footer/>
           </div>
         </Router>
       </Provider>;
