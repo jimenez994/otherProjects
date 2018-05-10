@@ -46,19 +46,29 @@ export const loginUser = userData => dispatch => {
 }
 
 // Set loggin in user 
-export const setCurrentUser = (decoded) => {
+export const setCurrentUser = (decoded)=> {
+    console.log(decoded);
     return {
         type: SET_CURRENT_USER,
         payload: decoded
     }
+    // axios.get(`http://localhost:8080/user/find/${decoded}`)
+    //     .then(res => {
+    //         dispatch({
+    //             type: SET_CURRENT_USER,
+    //             payload: res.data
+    //         })
+    //     })
+    //     .catch(err => console.log(err))
 }
 
 // Log user out
-export const logoutUser = () => dispatch => {
+export const logoutUser = (history) => dispatch => {
     // remove token from localStorage
     localStorage.removeItem('IdKey');
     // remove auth header fro future requests
     setAuthToken(false);
     // set current user to {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}));
+    // history.push("/");
 }

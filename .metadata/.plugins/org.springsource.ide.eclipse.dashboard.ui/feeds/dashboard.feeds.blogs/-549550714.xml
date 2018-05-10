@@ -5,7 +5,52 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2018-05-09T20:35:26Z</updated>
+  <updated>2018-05-10T13:45:05Z</updated>
+  <entry>
+    <title>Spring IO Platform Cairo SR1</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/05/10/spring-io-platform-cairo-sr1" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2018-05-10:3277</id>
+    <updated>2018-05-10T13:45:05Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="http://platform.spring.io/platform"&gt;Spring IO Platform&lt;/a&gt; Cairo-SR1 is now available from both &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central. &lt;/p&gt;
+&lt;p&gt;This maintenance release upgrades the versions of a number of the projects in the Platform:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot 2.0.2&lt;/li&gt;
+  &lt;li&gt;Spring Data Kay SR7&lt;/li&gt;
+  &lt;li&gt;Spring Framework 5.0.6&lt;/li&gt;
+  &lt;li&gt;Spring Kafka 2.1.6&lt;/li&gt;
+  &lt;li&gt;Spring Integration 5.0.5&lt;/li&gt;
+  &lt;li&gt;Spring Security 5.0.5&lt;/li&gt;
+  &lt;li&gt;Spring Session Apple SR2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The versions of a number of third-party dependencies have also been updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/Cairo-SR1/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring IO Platform Brussels SR10</title>
+    <link rel="alternate" href="https://spring.io/blog/2018/05/10/spring-io-platform-brussels-sr10" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2018-05-10:3276</id>
+    <updated>2018-05-10T11:33:34Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="http://platform.spring.io/platform"&gt;Spring IO Platform&lt;/a&gt; Brussels-SR10 is now available from both &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central. &lt;/p&gt;
+&lt;p&gt;This maintenance release upgrades the versions of a number of the projects in the Platform:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Boot 1.5.13&lt;/li&gt;
+  &lt;li&gt;Spring Data Ingalls SR12&lt;/li&gt;
+  &lt;li&gt;Spring Framework 4.3.17&lt;/li&gt;
+  &lt;li&gt;Spring Integration 4.3.16&lt;/li&gt;
+  &lt;li&gt;Spring Security 4.2.6&lt;/li&gt;
+  &lt;li&gt;Spring Security OAuth 2.0.15&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The versions of a number of third-party dependencies have also been updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/Brussels-SR10/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Data Flow 1.5 RC1 released</title>
     <link rel="alternate" href="https://spring.io/blog/2018/05/09/spring-cloud-data-flow-1-5-rc1-released" />
@@ -748,159 +793,5 @@ dependencies {&#xD;
   &lt;li&gt;Spring Data mad-scientist Thomas Darimont has a really compelling &lt;a href="https://t.co/zkC7LcuvXR?amp=1"&gt;Spring Boot 2.0 and Keycloak-based OAuth example&lt;/a&gt; on his Github account.&lt;/li&gt;
   &lt;li&gt;I love tweets like this one which &lt;a href="https://twitter.com/myobie/status/985996621761662976"&gt;explains that RabbitMQ still powers Wunderlist - cool&lt;/a&gt;!&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>Dependency Management Plugin 1.0.5.RELEASE</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/04/23/dependency-management-plugin-1-0-5-release" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2018-04-23:3257</id>
-    <updated>2018-04-23T14:13:39Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin"&gt;Gradle dependency management plugin&lt;/a&gt; 1.0.5.RELEASE is now available from Maven Central, Bintray, and the &lt;a href="https://plugins.gradle.org/plugin/io.spring.dependency-management"&gt;Gradle Plugin Portal&lt;/a&gt;. This maintenance release fixes a &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin/milestone/25?closed=1"&gt;handful of issues&lt;/a&gt;. It was included in the recent Spring Boot 1.5.12 and 2.0.1 releases and is also a recommended upgrade for all other users of the plugin.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow 1.5 M1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/04/20/spring-cloud-data-flow-1-5-m1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Pollack</name>
-    </author>
-    <id>tag:spring.io,2018-04-20:3256</id>
-    <updated>2018-04-20T17:55:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;a href="https://cloud.spring.io/spring-cloud-dataflow/"&gt;Spring Cloud Data Flow&lt;/a&gt; team is pleased to announce the release of &lt;code&gt;1.5.0 M1&lt;/code&gt;. Follow the &lt;em&gt;Getting Started&lt;/em&gt; guides for &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/1.5.0.M1/reference/htmlsingle/#getting-started"&gt;Local Server&lt;/a&gt;, &lt;a href="https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/1.5.0.M1/reference/htmlsingle/#getting-started"&gt;Cloud Foundry&lt;/a&gt;, and &lt;a href="https://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/1.5.0.M1/reference/htmlsingle/#kubernetes-getting-started"&gt;Kubernetes&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Here are the highlights:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;UI Improvements&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Boot &amp;amp; Spring Cloud Stream 2.0 Support&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Nested splits for Composed Tasks&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Metrics Collector 2.0 M1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Stream Application Starters Darwin M1 release train&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for deploying to multiple Kubernetes clusters&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="ui-improvements"&gt;&lt;a class="anchor" href="#ui-improvements"&gt;&lt;/a&gt;UI Improvements&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We have continued to improve the UI/UX of the Dashboard. You will immediately notice an overall lighter weight design. The Tasks tab has been rewritten to match the UX styling of the other tabs. The stream-builder view includes many optimizations ranging from better form validation and eager error reporting. Try it out!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;There has also been a significant amount of refactoring to optimize the codebase and prepare for future extensions and feature additions.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="spring-boot-spring-cloud-stream-2-0-support"&gt;&lt;a class="anchor" href="#spring-boot-spring-cloud-stream-2-0-support"&gt;&lt;/a&gt;Spring Boot &amp;amp; Spring Cloud Stream 2.0 Support&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We now support deploying Spring Boot and Spring Cloud Stream 2.0 based applications.  A small &lt;a href="https://github.com/spring-cloud-stream-app-starters/core/blob/master/common/app-starters-micrometer-common/src/main/java/org/springframework/cloud/stream/app/micrometer/common/SpringCloudStreamMicrometerCommonTags.java"&gt;utility class&lt;/a&gt; in the Spring Cloud Stream Application Starters library adds Micrometer metric tags to help identify the streams and applications in the desired monitoring backend.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="composed-tasks-and-nested-splits"&gt;&lt;a class="anchor" href="#composed-tasks-and-nested-splits"&gt;&lt;/a&gt;Composed Tasks and nested splits&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Due to popular demand, this release added DSL support to interpret “nested splits” in composed tasks. The Flo Dashboard and Shell tooling automatically adapt to nested splits.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Here is how it looks in the Flo Dashboard for the DSL expression:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre&gt;&amp;lt;&amp;lt;extractFromFTP &amp;amp;&amp;amp; cleanseFiles || extractFromS3 &amp;amp;&amp;amp; splitTransform&amp;gt; &amp;amp;&amp;amp; merge || extractfromOracle&amp;gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/gh-pages/img/nested-splits-1-5-0-M1.png" alt="Nested Splits"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To use this feature, you’d have to register the &lt;code&gt;1.1.1.BUILD-SNAPSHOT&lt;/code&gt; version of the Composed Task Runner in SCDF.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For Maven users&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre&gt;maven://org.springframework.cloud.task.app:composedtaskrunner-task:1.1.1.BUILD-SNAPSHOT&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;and for Docker users&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre&gt;docker:springcloudtask/composedtaskrunner-task:latest&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="metrics-collector-2-0-m1"&gt;&lt;a class="anchor" href="#metrics-collector-2-0-m1"&gt;&lt;/a&gt;Metrics Collector 2.0 M1&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The 2.0 M1 release of &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-metrics-collector"&gt;Metrics Collector&lt;/a&gt; is based on Spring Boot 2.0 and Spring Cloud Stream 2.0.  The Metrics Collector server supports collecting metrics from streams that contain only Boot 1.x or 2.x apps as well as streams that contain a &lt;a href="https://docs.spring.io/spring-cloud-dataflow/docs/1.5.0.M1/reference/htmlsingle/#configuration-monitoring-deployed-applications"&gt;mixture of Boot versions&lt;/a&gt;.  A consistent representation of the throughput rates will be captured and propagated over to SCDF’s Dashboard. A sample demonstrating comprehensive metrics support with the help of Micrometer and a few of the supported backends are in the works - stay tuned!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="stream-application-starters-darwin"&gt;&lt;a class="anchor" href="#stream-application-starters-darwin"&gt;&lt;/a&gt;Stream Application Starters Darwin&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The release train &lt;a href="http://docs.spring.io/spring-cloud-stream-app-starters/docs/Darwin.M1/reference/htmlsingle"&gt;Darwin&lt;/a&gt; updates the &lt;a href="https://cloud.spring.io/spring-cloud-stream-app-starters/"&gt;application starters&lt;/a&gt; to be based on Spring Boot &amp;amp;  Spring Cloud Stream 2.0. A &lt;a href="https://docs.spring.io/spring-cloud-stream-app-starters/docs/Darwin.M1/reference/htmlsingle/#spring-cloud-stream-modules-grpc-processor"&gt;gRPC processor&lt;/a&gt; has been added. Import URL can be found &lt;a href="http://cloud.spring.io/spring-cloud-stream-app-starters/#stream-app-starters-and-spring-cloud-data-flow-"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="support-for-deploying-to-multiple-kubernetes-clusters"&gt;&lt;a class="anchor" href="#support-for-deploying-to-multiple-kubernetes-clusters"&gt;&lt;/a&gt;Support for deploying to multiple Kubernetes clusters&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;While using Skipper with Data Flow, it is already possible to target application deployment to multiple platform backends. However, we did not support targeting multiple Kubernetes platforms. Now you can. :)&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="other-bits-and-bobs"&gt;&lt;a class="anchor" href="#other-bits-and-bobs"&gt;&lt;/a&gt;Other bits and bobs&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A growing number of new issues dealt with the ability to individually and globally override &lt;code&gt;JAVA_OPTS&lt;/code&gt; for applications running on Cloud Foundry.  We added a deployer property, e.g. &lt;code&gt;deployer.yourapp.cloudfoundry.javaOpts&lt;/code&gt; to support setting this specific environment variable.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The Kubernetes server now supports using a &lt;a href="https://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/1.5.0.M1/reference/htmlsingle/#_private_docker_registry"&gt;private Docker registry&lt;/a&gt; on a per-application basis.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="stay-in-touch"&gt;&lt;a class="anchor" href="#stay-in-touch"&gt;&lt;/a&gt;Stay in touch&amp;#8230;&amp;#8203;&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Please try it out, share your feedback, and consider contributing to the project!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>
