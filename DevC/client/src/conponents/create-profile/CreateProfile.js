@@ -8,7 +8,9 @@ class CreateProfile extends Component {
         this.state = { 
             displaySocialInputs: false,
             handle:'',
-            
+            company: '',
+            website: '',
+
         }
     }
   render() {
