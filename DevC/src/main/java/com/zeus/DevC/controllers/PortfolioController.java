@@ -38,6 +38,7 @@ public class PortfolioController {
 		Map<String, String> msg = new HashMap<String, String>();
 		User user = _Us.findById(id);
 			if(user != null) {
+				System.out.println("i got here");
 				return _pS.create(portfolio, user);				
 			}
 		msg.put("fail", 	"Must be login first");

@@ -14,8 +14,8 @@ const InputGroup = ({
   
 }) => {
   return (
-    <div className="input-group mb-3">
-        <div className="input-group-prepend">
+    <div className="input-group form-control-lg">
+        <div className="input-group-prepend ">
         <span className="input-group-text">
             <i className={icon}/>
         </span>
@@ -23,7 +23,7 @@ const InputGroup = ({
       {/* using classname allows to add logic to the inputs if invalid */}
       <input
         type={type}
-        className={classnames("form-control form-control-lg", {
+        className={classnames("form-control", {
           "is-invalid": error
         })}
         placeholder={placeholder}

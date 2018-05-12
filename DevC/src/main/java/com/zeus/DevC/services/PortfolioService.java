@@ -39,7 +39,7 @@ public class PortfolioService {
 				msg.put("status", "Status is required");
 			}
 			if(portfolio.getSkills().isEmpty()) {
-				msg.put("status", "Skills is required");
+				msg.put("skills", "Skills is required");
 			}
 			if(msg.isEmpty()) {
 				portfolio.setUser(user);

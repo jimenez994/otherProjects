@@ -33,7 +33,7 @@ public class Portfolio {
 	
 	private String status;
 	
-	private ArrayList<String> skills;
+	private String skills;
 	
 	private String twitter;
 	
@@ -120,15 +120,13 @@ public class Portfolio {
 		this.status = status;
 	}
 
-	public ArrayList<String> getSkills() {
+	public String getSkills() {
 		return skills;
 	}
 
-	public void setSkills(ArrayList<String> skills) {
+	public void setSkills(String skills) {
 		this.skills = skills;
 	}
-
-	
 
 	public String getTwitter() {
 		return twitter;
