@@ -11,5 +11,8 @@ public class Post {
 	@GeneratedValue
 	private long id;
 	
-	private String text;
+//	private String text;
+	
+	
+	
 }

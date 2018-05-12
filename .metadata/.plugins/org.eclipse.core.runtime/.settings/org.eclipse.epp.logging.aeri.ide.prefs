@@ -1,4 +1,9 @@
+configured=true
 eclipse.preferences.version=1
+reporterEmail=j.jimenez.9994@gmail.com
+reporterName=Jonathan Jimenez
 resetSendMode=KEEP
 resetSendModeOn=0
 sendMode=NOTIFY
+servers/com.genuitec.eclipse.aeri.server1/configured=true
+servers/org.eclipse.epp.logging.aeri.ide.server/configured=true

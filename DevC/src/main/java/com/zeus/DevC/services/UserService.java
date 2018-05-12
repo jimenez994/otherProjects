@@ -6,12 +6,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.zeus.DevC.models.Portfolio;
 import com.zeus.DevC.models.User;
 import com.zeus.DevC.repositories.UserRepository;
 
