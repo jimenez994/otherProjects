@@ -18,6 +18,7 @@ import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from './actions/authActions';
 
 import Dashboard from './conponents/dashboard/Dashboard';
+import CreateProfile from "./conponents/create-profile/CreateProfile";
 
 // this to check if user is in session
 // chaeck for tokem
@@ -51,8 +52,11 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
+              <Switch>
+                <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+              </Switch>
             </div>
-            <Footer/>
+            <Footer />
           </div>
         </Router>
       </Provider>;
