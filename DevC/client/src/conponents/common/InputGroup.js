@@ -20,7 +20,7 @@ const InputGroup = ({
             <i className={icon}/>
         </span>
         </div>
-      {/* using classname allows to add logic to the inputs if invalid */}
+      {/* Using classname allows to add logic to the inputs if invalid */}
       <input
         type={type}
         className={classnames("form-control", {
@@ -31,7 +31,7 @@ const InputGroup = ({
         value={value}
         onChange={onChange}
       />
-      {/* this shows the error message */}
+      {/* This shows the error message */}
       {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );

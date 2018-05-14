@@ -20,16 +20,16 @@ import { setCurrentUser } from './actions/authActions';
 import Dashboard from './conponents/dashboard/Dashboard';
 import CreateProfile from "./conponents/create-profile/CreateProfile";
 
-// this to check if user is in session
-// chaeck for tokem
+// This to check if user is in session
+// Chaeck for tokem
 if(localStorage.IdKey){
-  // set auth token header auth
+  // Set auth token header auth
   setAuthToken(localStorage.IdKey);
-  // get user info
-  // set user and isAithenticated
+  // Get user info
+  // Set user and isAithenticated
   store.dispatch(setCurrentUser(localStorage.IdKey))
 
-  // // check fro expired token
+  // // Theck fro expired token
   // const currentTime = Date.now()/ 1000;
   // if(decoded.exp< currentTime){
   //   store.dispatch(loginUser());

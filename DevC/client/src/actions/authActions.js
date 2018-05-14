@@ -63,11 +63,11 @@ export const setCurrentUser = (decoded)=> {
 
 // Log user out
 export const logoutUser = (history) => dispatch => {
-    // remove token from localStorage
+    // Remove token from localStorage
     localStorage.removeItem('IdKey');
-    // remove auth header fro future requests
+    // Remove auth header fro future requests
     setAuthToken(false);
-    // set current user to {} which will set isAuthenticated to false
+    // Set current user to {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}));
     // history.push("/");
 }
