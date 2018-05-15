@@ -6,6 +6,7 @@ var IdKey = null;
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading());
     if(localStorage.IdKey){
+        // key is the user id
         IdKey = localStorage.IdKey;
         axios.get(`http://localhost:8080/p/portfolio/${IdKey}`)
             .then( res => {
@@ -29,7 +30,7 @@ export const getCurrentProfile = () => dispatch => {
             .catch(err => console.log(err))
     }
 }
-// Create Profile
+// Create Profile 
 export const createProfile = (profileData, history) => dispatch => {
     if(localStorage.IdKey){
         IdKey = localStorage.IdKey;
