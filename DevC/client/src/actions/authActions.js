@@ -36,7 +36,6 @@ export const loginUser = userData => dispatch => {
                 // Set current user
                 dispatch(setCurrentUser(token))
             }else{
-                // At this poin will dispatch the error
                 dispatch({
                     type: GET_ERRORS,
                     payload: res.data
