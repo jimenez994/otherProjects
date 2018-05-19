@@ -3,23 +3,23 @@ import setAuthToken from '../utils/setAuthToken';
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 //  REGISTER  User
 export const  registerUser = (userData, history) => dispatch => {
-     axios
-          .post("http://localhost:8080/user/register", userData)
-          .then(res => {
-                if(res.data.success){
-                    // const token = res.data;
-                    // localStorage.setItem('IdKey', token);
-                    // setAuthToken(token)
-                    // dispatch(setCurrentUser(token))
-                    history.push('/login')
-                }else{
-                    dispatch({
-                    type: GET_ERRORS,
-                    payload: res.data
-                    });
-                }
-          })
-          .catch(err => console.log(err));
+    axios
+        .post("http://localhost:8080/user/register", userData)
+        .then(res => {
+            if(res.data.success){
+                // const token = res.data;
+                // localStorage.setItem('IdKey', token);
+                // setAuthToken(token)
+                // dispatch(setCurrentUser(token))
+                history.push('/login')
+            }else{
+                dispatch({
+                type: GET_ERRORS,
+                payload: res.data
+                });
+            }
+        })
+        .catch(err => console.log(err));
 }
 // this is justa message
 // Login - get user Id
