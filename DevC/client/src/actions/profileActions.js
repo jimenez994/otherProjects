@@ -51,6 +51,12 @@ export const createProfile = (profileData, history) => dispatch => {
             .catch(err => console.log(err))
     }
 }
+// add experience
+export const addExperience = (expData, history) => dispatch => {
+    axios
+        .post()
+}
+
 // delete account & profile
 export const deleteAccount = () => dispatch => {
     if(window.confirm('Are you sure? This can NOT be undone!')){
@@ -75,6 +81,7 @@ export const deleteAccount = () => dispatch => {
         }
     }
 }
+
 
 
 // Profile loading 
