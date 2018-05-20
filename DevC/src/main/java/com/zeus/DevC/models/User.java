@@ -107,6 +107,8 @@ public class User {
 	public void setPortfolio(Portfolio portfolio) {
 		this.portfolio = portfolio;
 	}
+
+
 	
 	
 }

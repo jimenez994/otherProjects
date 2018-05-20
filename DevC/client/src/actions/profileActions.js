@@ -34,6 +34,8 @@ export const getCurrentProfile = () => dispatch => {
 export const createProfile = (profileData, history) => dispatch => {
     if(localStorage.IdKey){
         IdKey = localStorage.IdKey;
+        console.log(profileData);
+        console.log(IdKey);
         axios
             .post(`http://localhost:8080/p/new/${IdKey}`, profileData)
             .then(res => {

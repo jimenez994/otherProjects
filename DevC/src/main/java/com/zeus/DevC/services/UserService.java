@@ -110,9 +110,7 @@ public class UserService {
 	}
 	
 	public User findById(long id) {
-		User user = userRepo.findOne(id);
-		user.setPortfolio(null);
-		return user;
+		return userRepo.findOne(id);
 	}
 	
 	public Map<String, String>  delete(long id) {

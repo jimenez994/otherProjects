@@ -45,10 +45,10 @@ class CreateProfile extends Component {
 
     if (nextProps.profile.profile) {
       const profile = nextProps.profile.profile;
-
+        console.log(profile.id + "this is the id profile")
       // Bring skills array back to CSV
     //   const skillsCSV = profile.skills.join(",");
-
+        profile.id = profile.id;
       // If profile field doesnt exist, make empty string
       profile.company = !isEmpty(profile.company) ? profile.company : "";
       profile.website = !isEmpty(profile.website) ? profile.website : "";
@@ -76,6 +76,7 @@ class CreateProfile extends Component {
 
       // Set component fields state
       this.setState({
+        id: profile.id,
         handle: profile.handle,
         company: profile.company,
         website: profile.website,
@@ -98,6 +99,7 @@ class CreateProfile extends Component {
     e.preventDefault();
 
     const profileData = {
+      id: this.state.id,
       handle: this.state.handle,
       company: this.state.company,
       website: this.state.website,

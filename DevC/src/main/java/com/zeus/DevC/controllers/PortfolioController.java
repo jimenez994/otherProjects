@@ -37,11 +37,16 @@ public class PortfolioController {
 	@PostMapping("/new/{id}")
 	public Map<String, String> createOrUpdate(@RequestBody Portfolio portfolio, @PathVariable("id") long id){
 		Map<String, String> msg = new HashMap<String, String>();
+		System.out.println("this is to update portfolio"+ portfolio.getId());
 		User user = _Us.findById(id);
+		System.out.println("this is to update user id"+ user.getName());
 			if(user != null) {
+//				System.out.println("this is to update   0"+ portfolio.getHandle());
+
 				if(user.getPortfolio() != null) {
-					System.out.println("this is to update");
+					System.out.println("this is to update"+ portfolio.getId());
 //					this is to update the profolio
+					System.out.println("this is to update user id ****"+ user.getName());
 					portfolio.setUser(user);
 					portfolio.setEducations(user.getPortfolio().getEducations());
 					portfolio.setExperiences(user.getPortfolio().getExperiences());

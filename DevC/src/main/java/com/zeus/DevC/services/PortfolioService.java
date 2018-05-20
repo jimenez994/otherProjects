@@ -46,7 +46,7 @@ public class PortfolioService {
 //				_pR.save(portfolio);
 				user.setPortfolio(portfolio);
 				_uS.update(user);
-				System.out.println("hey i got here");
+				System.out.println("hey i got here"+ user.getPortfolio().getHandle());
 				msg.put("success", "Created a porfolio");
 			}
 			return msg;
