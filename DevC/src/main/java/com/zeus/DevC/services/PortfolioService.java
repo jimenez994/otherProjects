@@ -43,7 +43,7 @@ public class PortfolioService {
 			}
 			if(msg.isEmpty()) {
 				portfolio.setUser(user);
-				_pR.save(portfolio);
+//				_pR.save(portfolio);
 				user.setPortfolio(portfolio);
 				_uS.update(user);
 				System.out.println("hey i got here");
@@ -93,10 +93,15 @@ public class PortfolioService {
 	}
 	public Map<String,String> update(Portfolio portfolio) {
 		Map<String,String> msg = new HashMap<String, String>();
+		
+		Portfolio checkPorfolio = _pR.findByHandle(portfolio.getHandle());
+		
 		if(portfolio.getHandle().isEmpty()) {
 			msg.put("handle", "Handle is required");
-		}else if(_pR.findByHandle(portfolio.getHandle()) != null) {
-			msg.put("handle", "Handle is already taken");
+		}else if(checkPorfolio != null) {
+			if(checkPorfolio.getHandle() != portfolio.getUser().getPortfolio().getHandle()) {
+				msg.put("handle", "Handle is already taken");
+			}
 		}else {
 			_pR.save(portfolio);
 			msg.put("success", "You have update your portfolio");

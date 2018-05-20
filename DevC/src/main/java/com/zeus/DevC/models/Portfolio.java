@@ -3,6 +3,7 @@ package com.zeus.DevC.models;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -46,9 +47,9 @@ public class Portfolio {
 	
 	private String bio;
 	
-	private String gitHubUsername;
+	private String githubusername;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private User user;
 	
@@ -175,12 +176,12 @@ public class Portfolio {
 		this.bio = bio;
 	}
 
-	public String getGitHubUsername() {
-		return gitHubUsername;
+	public String getGithubusername() {
+		return githubusername;
 	}
 
-	public void setGitHubUsername(String gitHubUsername) {
-		this.gitHubUsername = gitHubUsername;
+	public void setGithubusername(String githubusername) {
+		this.githubusername = githubusername;
 	}
 
 	public User getUser() {

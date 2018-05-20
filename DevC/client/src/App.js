@@ -20,6 +20,8 @@ import { setCurrentUser } from './actions/authActions';
 import Dashboard from './conponents/dashboard/Dashboard';
 import CreateProfile from "./conponents/create-profile/CreateProfile";
 
+import EditProfile from "./conponents/edit-profile/EditProfile";
+
 // This to check if user is in session
 // Chaeck for tokem
 if(localStorage.IdKey){
@@ -54,6 +56,9 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/edit-profile" component={EditProfile} />
               </Switch>
             </div>
             <Footer />

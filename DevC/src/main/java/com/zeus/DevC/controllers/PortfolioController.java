@@ -35,11 +35,25 @@ public class PortfolioController {
 	Gson gson = new Gson();
 	
 	@PostMapping("/new/{id}")
-	public Map<String, String> create(@RequestBody Portfolio portfolio, @PathVariable("id") long id){
+	public Map<String, String> createOrUpdate(@RequestBody Portfolio portfolio, @PathVariable("id") long id){
 		Map<String, String> msg = new HashMap<String, String>();
 		User user = _Us.findById(id);
 			if(user != null) {
-				return _pS.create(portfolio, user);				
+				if(user.getPortfolio() != null) {
+					System.out.println("this is to update");
+//					this is to update the profolio
+					portfolio.setUser(user);
+					portfolio.setEducations(user.getPortfolio().getEducations());
+					portfolio.setExperiences(user.getPortfolio().getExperiences());
+					portfolio.setId(user.getPortfolio().getId());
+					return _pS.update(portfolio);			
+				}else {
+					System.out.println("this is to create profile");
+					System.out.println(user.getPortfolio());
+					System.out.println("**************");
+//					this is to create a new profolio
+					return _pS.create(portfolio, user);	
+				}
 			}
 		msg.put("fail", 	"Must be login first");
 		return msg;
@@ -60,10 +74,10 @@ public class PortfolioController {
 		System.out.println(gson.toJson(_pS.findById(id)));
 		return null;
 	}
-	@PutMapping("/update/{id}")
-	public Map<String, String> update(@RequestBody Portfolio portfolio){
-		return _pS.update(portfolio);
-	}
+//	@PutMapping("/update/{id}")
+//	public Map<String, String> update(@RequestBody Portfolio portfolio){
+//		return _pS.update(portfolio);
+//	}
 	@GetMapping("/all")
 	public ArrayList<Portfolio> all(){
 		return _pS.all();
