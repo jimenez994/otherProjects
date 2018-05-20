@@ -98,15 +98,16 @@ public class PortfolioService {
 		
 		if(portfolio.getHandle().isEmpty()) {
 			msg.put("handle", "Handle is required");
-		}else if(checkPorfolio != null) {
-			if(checkPorfolio.getHandle() != portfolio.getUser().getPortfolio().getHandle()) {
-				msg.put("handle", "Handle is already taken");
-			}
-		}else {
-			_pR.save(portfolio);
-			msg.put("success", "You have update your portfolio");
 			return msg;
 		}
+		if(checkPorfolio != null) {
+			if(checkPorfolio.getHandle() != portfolio.getUser().getPortfolio().getHandle()) {
+				msg.put("handle", "Handle is already taken");
+				return msg;
+			}
+		}
+		_pR.save(portfolio);
+		msg.put("success", "You have update your portfolio");
 		return msg;
 	}
 	
