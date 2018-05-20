@@ -118,8 +118,7 @@ public class UserService {
 	public Map<String, String>  delete(long id) {
 		userRepo.delete(id);
 		Map<String, String> msg = new HashMap<String, String>();
-		msg.put("message", "You successfully delete a user");
+		msg.put("success", "You successfully delete a user");
 		return msg;
 	}
-
 }

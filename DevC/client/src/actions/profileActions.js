@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS, CLEAR_CURRENT_PROFILE } from './types';
+import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS, CLEAR_CURRENT_PROFILE, SET_CURRENT_USER } from './types';
 var IdKey = null;
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
@@ -34,7 +34,8 @@ export const getCurrentProfile = () => dispatch => {
 export const createProfile = (profileData, history) => dispatch => {
     if(localStorage.IdKey){
         IdKey = localStorage.IdKey;
-         axios.post(`http://localhost:8080/p/new/${IdKey}`, profileData)
+        axios
+            .post(`http://localhost:8080/p/new/${IdKey}`, profileData)
             .then(res => {
                 if(res.data.success){
                     history.push("/dashboard");
@@ -48,7 +49,31 @@ export const createProfile = (profileData, history) => dispatch => {
             .catch(err => console.log(err))
     }
 }
-   
+// delete account & profile
+export const deleteAccount = () => dispatch => {
+    if(window.confirm('Are you sure? This can NOT be undone!')){
+        if(localStorage.IdKey){
+            axios
+                .delete(`http://localhost:8080/p/delete/${IdKey}`)
+                .then(res => {
+                    if(res.data.success){
+                        dispatch({
+                            type: SET_CURRENT_USER,
+                            payload: {}
+                        })
+                        localStorage.removeItem("IdKey");
+                    }else{
+                        dispatch({
+                            type: GET_ERRORS,
+                            payload: res.data
+                        })
+                    }
+                })
+                .catch(err => console.log(err))
+        }
+    }
+}
+
 
 // Profile loading 
 export const setProfileLoading = () => {

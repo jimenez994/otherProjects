@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,6 @@ public class PortfolioController {
 		Map<String, String> msg = new HashMap<String, String>();
 		User user = _Us.findById(id);
 			if(user != null) {
-				System.out.println("i got here");
 				return _pS.create(portfolio, user);				
 			}
 		msg.put("fail", 	"Must be login first");
@@ -47,10 +47,7 @@ public class PortfolioController {
 	
 	@GetMapping("/portfolio/{id}")
 	public String userPortfolio(HttpSession session, @PathVariable("id") long id) {
-		System.out.println("***********1  " + _pS.userPorfolio(id));
 		String map2 = gson.toJson(_pS.userPorfolio(id));
-
-//		return _pS.userPorfolio(id);
 		return map2;
 	}
 	
@@ -70,6 +67,10 @@ public class PortfolioController {
 	@GetMapping("/all")
 	public ArrayList<Portfolio> all(){
 		return _pS.all();
+	}
+	@DeleteMapping("/delete/{id}")
+	public Map<String, String> deleteProfile(@PathVariable("id") long id){
+		return _Us.delete(id);
 	}
 	
 
