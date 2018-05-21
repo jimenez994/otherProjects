@@ -53,10 +53,10 @@ public class Portfolio {
 	@JoinColumn(name="user_id")
 	private User user;
 	
-	@OneToMany(mappedBy="portfolio", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="portfolio",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Experience> experiences;
 	
-	@OneToMany(mappedBy="portfolio", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="portfolio",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Education> educations;
 	
 	@DateTimeFormat(pattern="MM:dd:yyyy HH:mm:ss")

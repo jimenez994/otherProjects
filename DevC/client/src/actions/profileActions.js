@@ -34,8 +34,6 @@ export const getCurrentProfile = () => dispatch => {
 export const createProfile = (profileData, history) => dispatch => {
     if(localStorage.IdKey){
         IdKey = localStorage.IdKey;
-        console.log(profileData);
-        console.log(IdKey);
         axios
             .post(`http://localhost:8080/p/new/${IdKey}`, profileData)
             .then(res => {
@@ -53,8 +51,23 @@ export const createProfile = (profileData, history) => dispatch => {
 }
 // add experience
 export const addExperience = (expData, history) => dispatch => {
-    axios
-        .post()
+    if(localStorage.IdKey){
+            IdKey = localStorage.IdKey;
+        axios
+            .post(`http://localhost:8080/exp/new/${IdKey}`, expData)
+            .then(res => {
+                if(res.data.success){
+                    history.push("/dashboard");
+                }else{
+                    dispatch({
+                        type: GET_ERRORS,
+                        payload: res.data
+                    })
+                }
+            })
+            .catch(err => console.log(err));
+    }
+    
 }
 
 // delete account & profile

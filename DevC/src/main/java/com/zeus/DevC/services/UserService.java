@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.zeus.DevC.models.User;
+import com.zeus.DevC.repositories.PortfolioRepository;
 import com.zeus.DevC.repositories.UserRepository;
 
 @Service
@@ -20,9 +21,11 @@ public class UserService {
 	
 	private BCryptPasswordEncoder bcrypt; 
 	private UserRepository userRepo;
+	private PortfolioRepository _Pr;
 	
-	public UserService(UserRepository userRepo){
+	public UserService(UserRepository userRepo, PortfolioRepository _Pr){
 		this.userRepo = userRepo;
+		this._Pr = _Pr;
 		this.bcrypt = new BCryptPasswordEncoder();
 	}
 	
@@ -113,8 +116,16 @@ public class UserService {
 		return userRepo.findOne(id);
 	}
 	
+	public User findByIdFront(Long id) {
+		User user = userRepo.findOne(id);
+		user.setPortfolio(null);
+		return user;
+	}
+	
 	public Map<String, String>  delete(long id) {
+		System.out.println("this is the id to delete"+ id);
 		userRepo.delete(id);
+		System.out.println("after deleteing");
 		Map<String, String> msg = new HashMap<String, String>();
 		msg.put("success", "You successfully delete a user");
 		return msg;

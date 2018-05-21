@@ -45,7 +45,6 @@ public class PortfolioController {
 					portfolio.setUser(user);
 					portfolio.setEducations(user.getPortfolio().getEducations());
 					portfolio.setExperiences(user.getPortfolio().getExperiences());
-					portfolio.setId(user.getPortfolio().getId());
 					return _pS.update(portfolio);			
 				}else{
 //					this is to create a new profolio
@@ -71,10 +70,6 @@ public class PortfolioController {
 		System.out.println(gson.toJson(_pS.findById(id)));
 		return null;
 	}
-//	@PutMapping("/update/{id}")
-//	public Map<String, String> update(@RequestBody Portfolio portfolio){
-//		return _pS.update(portfolio);
-//	}
 	@GetMapping("/all")
 	public ArrayList<Portfolio> all(){
 		return _pS.all();

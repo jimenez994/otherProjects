@@ -55,26 +55,20 @@ public class PortfolioService {
 		return msg;
 	}
 	public Map<String,String> userPorfolio(long id) {
-		System.out.println("*******2");
 		Map<String,String> portfolio = new HashMap<String, String>();
 			Portfolio port =  _pR.findByUserId(id);
-			System.out.println(port);
 //			Portfolio portfolio = user.getPortfolio();
 		if(port != null) {
 //			portfolio.setEducations(null);
 			port.setUser(null);
+			port.setExperiences(null);
 //			portfolio.setExperiences(null);
-			System.out.println("*******3");
 			Map<String, String> map = oMapper.convertValue(port, Map.class);
 			map.put("success", "you have your portfolio");
-			System.out.println(map);
 			return map;
 		}else {
-			System.out.println("*******");
-
 			portfolio.put("noProfile","Sorry you dont hava a profolio");
 		}
-		
 		return portfolio;
 	}
 	public Portfolio findByHandle(String handle) {
