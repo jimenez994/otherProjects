@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=/Users/Admin/Desktop/codingdojo/projects/DevC/.git\:
-GitRepositoriesView.GitDirectories.relative=.git\:
+GitRepositoriesView.GitDirectories=/Users/Admin/Desktop/codingdojo/projects/DevC/.git\:/Users/Admin/Desktop/codingdojo/projects/WorldCupBracket/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:/Users/Admin/Desktop/codingdojo/projects/WorldCupBracket/.git\:
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

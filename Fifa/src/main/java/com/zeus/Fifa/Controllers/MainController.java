@@ -33,7 +33,7 @@ public class MainController {
 //		Map<String, String> team = mydata;
 		System.out.println(mydata);
 		List<Team> participantJsonList = mapper.readValue(mydata, new TypeReference<List<Team>>(){});
-
+		
 //		Map<String,Object> map = mapper.readValue(mydata, Map.class);
 		System.out.println(participantJsonList);
 		return "redirect:/";

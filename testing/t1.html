@@ -9,27 +9,52 @@
 </head>
 <body>
     <h1>hello</h1>
-    <div class="tournament"></div>
+    <div class="demo"></div>
+    <input type="text" id="fifa" value="text">
+    <button id="saveOutput">submit</button>
     <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="jquery.bracket.min.js"></script>
     <script>
-        var minData = {
-            teams: [
-                ["Barzil", "porgr"],
-                ["Ba", "po"],
-                ["rzil", "prgr"],
-                ["Bzil", "gr"],
-            ],
-            result : [
-                [[1,3],[1,4],[3,2],[5,1]],
-                [[2,3],[3,2]],
-                [[1,2],[3,0]]
-            ]
-        }
         
-        $('.tournament').bracket({
-            init: minData
-        });
+
+       var minimalData = {
+            teams: [
+               ["Russia", "Saudi Arabia"],
+               ["Portugal", "Spain"],
+               ["France", "Australia"],
+               ["Argentina", "Iceland"],
+               ["Brazil", "Switzerland"],
+               ["Germany", "Mexico"],
+               ["Belgium", "Panama"],
+               ["Poland", "Senegal"]
+           ],
+           results: [
+               [[1, 0], [null, null], [null, null], [null, null], [1, 0], [null, null], [null, null], [null, null]],
+               [[null, null], [null, null], [null, null], [null, null]],
+               [[null, null], [null, null]],
+               [[null, null], [null, null]]
+           ]
+        };
+        
+        function saveFn(data, userData) {
+            console.log(JSON.stringify(data))
+            document.getElementById('fifa').value = JSON.stringify(data)
+        }
+
+        $(function () {
+            var container = $(' .demo')
+            container.bracket({
+                init: minimalData,
+                save: saveFn,
+                userData: "http://myapi"
+            })
+
+            /* You can also inquiry the current data */
+            var data = container.bracket('data')
+            // $('.demo').text(jQuery.toJSON(data))
+        })
+           
+
     </script>
    
 </body>
