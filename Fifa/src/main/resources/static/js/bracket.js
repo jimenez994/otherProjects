@@ -68,7 +68,7 @@ $(document).ready(function(){
             })
         });
         console.log(JSON.stringify(allDataIds));
-        document.getElementById('myData').value = JSON.stringify(allDataIds[0])
+        document.getElementById('myData').value = JSON.stringify(allDataIds)
     //    magic ends here
 
 
