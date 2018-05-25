@@ -2,6 +2,7 @@ package com.zeus.DevC.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+import com.zeus.DevC.models.Education;
+import com.zeus.DevC.models.Experience;
 import com.zeus.DevC.models.Portfolio;
 import com.zeus.DevC.models.User;
 import com.zeus.DevC.repositories.PortfolioRepository;
@@ -57,20 +60,26 @@ public class PortfolioService {
 	public Map<String,String> userPorfolio(long id) {
 		Map<String,String> portfolio = new HashMap<String, String>();
 			Portfolio port =  _pR.findByUserId(id);
-//			Portfolio portfolio = user.getPortfolio();
+			List<Experience> exps = port.getExperiences();
+			List<Education> educations = port.getEducations();
 		if(port != null) {
-//			portfolio.setEducations(null);
 			port.setUser(null);
-			port.setExperiences(null);
-//			portfolio.setExperiences(null);
+			for(Experience exp : exps) {
+				exp.setPortfolio(null);
+			}
+			port.setExperiences(exps);
+			for(Education edu : educations) {
+				edu.setPortfolio(null);
+			}
+			port.setEducations(educations);
 			Map<String, String> map = oMapper.convertValue(port, Map.class);
 			map.put("success", "you have your portfolio");
 			return map;
-		}else {
-			portfolio.put("noProfile","Sorry you dont hava a profolio");
 		}
+		portfolio.put("noProfile","Sorry you dont hava a profolio");
 		return portfolio;
 	}
+	
 	public Portfolio findByHandle(String handle) {
 		Portfolio portfolio = _pR.findByHandle(handle);
 //		portfolio.setEducations(null);
