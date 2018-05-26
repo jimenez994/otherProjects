@@ -33,11 +33,14 @@ public class ExperienceService {
 		}
 		return msg;
 	}
-	public Map<String, String> deleteExp(long id){
-		Map<String, String> msg = new HashMap<String, String>();
-		msg.put("success", "You successfully deleted an experience");
+	public void deleteExp(long id){
+		System.out.println("deleteing " + id);
 		_Er.delete(id);
-		return msg;
+		System.out.println("complete" + id);
+	}
+	
+	public Experience findOne(long id) {
+		return _Er.findOne(id);
 	}
 
 }

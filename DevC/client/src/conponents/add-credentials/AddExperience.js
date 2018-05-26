@@ -103,7 +103,7 @@ class AddExperience extends Component {
                   type="date"
                   value={this.state.startDate}
                   onChange={this.onChange}
-                  error={errors.startDate}
+                  error={errors.startFrom}
                 />
                 <h6>To Date</h6>
                 <TextFieldGroup

@@ -16,6 +16,8 @@ import javax.persistence.PreUpdate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Portfolio {
 	
@@ -53,7 +55,8 @@ public class Portfolio {
 	@JoinColumn(name="user_id")
 	private User user;
 	
-	@OneToMany(mappedBy="portfolio",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="portfolio",cascade=CascadeType.ALL)
+	@JsonManagedReference
 	private List<Experience> experiences;
 	
 	@OneToMany(mappedBy="portfolio",cascade=CascadeType.ALL, fetch = FetchType.LAZY)

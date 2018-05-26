@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.zeus.DevC.models.Experience;
+import com.zeus.DevC.models.Portfolio;
 import com.zeus.DevC.models.User;
 import com.zeus.DevC.services.ExperienceService;
+import com.zeus.DevC.services.PortfolioService;
 import com.zeus.DevC.services.UserService;
 
 @RestController
@@ -28,6 +31,9 @@ public class ExperienceController {
 	@Autowired
 	private UserService _Us;
 	
+	@Autowired
+	private PortfolioService _Ps;
+
 	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); // your format
 	
 	@RequestMapping("/new/{id}")
@@ -44,5 +50,13 @@ public class ExperienceController {
 		}
 		Experience newExp= new Experience(exp.get("title"), exp.get("description"), exp.get("company"), exp.get("location"), dateFrom, toEnd, user.getPortfolio());
 		return _eS.createExp(newExp);
+	}
+	
+	@RequestMapping("/delete/{id}")
+	public Portfolio deleteExperience(@PathVariable long id){
+		long userId = _eS.findOne(id).getPortfolio().getUser().getId();
+		_eS.deleteExp(id);
+		System.out.println(_Ps.userPorfolio(userId));
+		return _Ps.userPorfolio(userId);
 	}
 }

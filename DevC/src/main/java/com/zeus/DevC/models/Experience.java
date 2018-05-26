@@ -14,6 +14,8 @@ import javax.persistence.PreUpdate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Experience {
 
@@ -40,6 +42,7 @@ public class Experience {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="portfolio_id")
+	@JsonManagedReference
 	private Portfolio portfolio;
 	
 	@DateTimeFormat(pattern="MM:dd:yyyy HH:mm:ss")

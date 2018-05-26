@@ -1,7 +1,6 @@
 package com.zeus.DevC.controllers;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -57,7 +56,6 @@ public class PortfolioController {
 	
 	@GetMapping("/portfolio/{id}")
 	public Portfolio userPortfolio(HttpSession session, @PathVariable("id") long id) {
-		System.out.println(new Date());
 		return _pS.userPorfolio(id);
 	}
 	
