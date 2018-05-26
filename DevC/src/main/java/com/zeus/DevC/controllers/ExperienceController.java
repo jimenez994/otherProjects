@@ -1,5 +1,8 @@
 package com.zeus.DevC.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +28,19 @@ public class ExperienceController {
 	@Autowired
 	private UserService _Us;
 	
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); // your format
+	
+	
 	@RequestMapping("/new/{id}")
-	public Map<String, String> newExperience(@RequestBody Experience exp, @PathVariable long id){
+	public Map<String, String> newExperience(@RequestBody Map<String, String> exp, @PathVariable long id) throws ParseException{
+		System.out.println(exp);
 		User user = _Us.findById(id);
-		exp.setPortfolio(user.getPortfolio());
-		return _eS.createExp(exp);
+		Date dateFrom = format.parse((String)exp.get("startDate"));
+		System.out.println(dateFrom);
+		Experience newExp= new Experience(exp.get("title"), exp.get("description"), exp.get("company"), exp.get("location"), dateFrom, dateFrom, user.getPortfolio());
+//		newExp.setStartFrom(dateFrom);
+//		newExp.setPortfolio(user.getPortfolio());
+		return _eS.createExp(newExp);
+//		return null;
 	}
 }

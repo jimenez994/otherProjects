@@ -30,10 +30,10 @@ public class Experience {
 	
 	private String location;
 	
-	@DateTimeFormat(pattern="MM:dd:yyyy HH:mm:ss")
+	@DateTimeFormat(pattern="MM:dd:yyyy")
 	private Date startDate;
 	
-	@DateTimeFormat(pattern="MM:dd:yyyy HH:mm:ss")
+	@DateTimeFormat(pattern="MM:dd:yyyy")
 	private Date endDate;
 	
 	private boolean current = false;
@@ -49,6 +49,16 @@ public class Experience {
 	private Date updatedAt;
 	
 	public Experience() {}
+	
+	public Experience(String title, String description, String company, String location, Date startDate, Date endDate, Portfolio portfolio) {
+		this.title = title;
+		this.description = description;
+		this.company = company;
+		this.location = location;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.portfolio = portfolio;
+	}
 	
 	@PrePersist
 	public void onCreate(){this.createdAt = new Date();}

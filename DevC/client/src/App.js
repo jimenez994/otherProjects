@@ -21,6 +21,7 @@ import Dashboard from './conponents/dashboard/Dashboard';
 import CreateProfile from "./conponents/create-profile/CreateProfile";
 import EditProfile from "./conponents/edit-profile/EditProfile";
 import AddExperience from "./conponents/add-credentials/AddExperience";
+import AddEducation from "./conponents/add-credentials/AddEducation";
 
 // This to check if user is in session
 // Chaeck for tokem
@@ -62,6 +63,9 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/add-experience" component={AddExperience} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/add-education" component={AddEducation} />
               </Switch>
             </div>
             <Footer />

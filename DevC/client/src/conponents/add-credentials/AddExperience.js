@@ -13,8 +13,8 @@ class AddExperience extends Component {
       company: "",
       title: "",
       location: "",
-      from: "",
-      to: "",
+      startDate: "",
+      endDate: "",
       current: false,
       description: "",
       errors: {},
@@ -39,8 +39,8 @@ class AddExperience extends Component {
       company: this.state.company,
       title: this.state.title,
       location: this.state.location,
-      from: this.state.from,
-      to: this.state.to,
+      startDate: this.state.startDate,
+      endDate: this.state.endDate,
       current: this.state.current,
       description: this.state.description
     };
@@ -99,19 +99,19 @@ class AddExperience extends Component {
                 />
                 <h6>From Date</h6>
                 <TextFieldGroup
-                  name="from"
+                  name="startDate"
                   type="date"
-                  value={this.state.from}
+                  value={this.state.startDate}
                   onChange={this.onChange}
-                  error={errors.from}
+                  error={errors.startDate}
                 />
                 <h6>To Date</h6>
                 <TextFieldGroup
-                  name="to"
+                  name="endDate"
                   type="date"
-                  value={this.state.to}
+                  value={this.state.endDate}
                   onChange={this.onChange}
-                  error={errors.to}
+                  error={errors.endDate}
                   disabled={this.state.disabled ? "disabled" : ""}
                 />
                 <div className="form-check mb-4">
@@ -134,7 +134,7 @@ class AddExperience extends Component {
                   value={this.state.description}
                   onChange={this.onChange}
                   error={errors.description}
-                  info="Tell us about the the position"
+                  info="Tell us about the position"
                 />
                 <input
                   type="submit"

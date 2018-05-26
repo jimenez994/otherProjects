@@ -52,7 +52,7 @@ export const createProfile = (profileData, history) => dispatch => {
 // add experience
 export const addExperience = (expData, history) => dispatch => {
     if(localStorage.IdKey){
-            IdKey = localStorage.IdKey;
+        IdKey = localStorage.IdKey;
         axios
             .post(`http://localhost:8080/exp/new/${IdKey}`, expData)
             .then(res => {
@@ -67,7 +67,25 @@ export const addExperience = (expData, history) => dispatch => {
             })
             .catch(err => console.log(err));
     }
-    
+}
+// add education
+export const addEducation = (eduData, history) => dispatch => {
+    if(localStorage.IdKey){
+        IdKey = localStorage.IdKey;
+        axios
+            .post(`http://localhost:8080/edu/new/${IdKey}`, eduData)
+            .then(res => {
+                if(res.data.success){
+                    history.push("/dashboard");
+                }else{
+                    dispatch({
+                        type: GET_ERRORS,
+                        payload: res.data
+                    })
+                }
+            })
+            .catch(err => console.log(err));
+    }
 }
 
 // delete account & profile

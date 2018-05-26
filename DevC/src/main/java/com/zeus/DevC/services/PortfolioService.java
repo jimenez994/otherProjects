@@ -57,12 +57,12 @@ public class PortfolioService {
 		msg.put("fail", "You already have a portfolio");
 		return msg;
 	}
-	public Map<String,String> userPorfolio(long id) {
-		Map<String,String> portfolio = new HashMap<String, String>();
+	public Map<String,Object> userPorfolio(long id) {
+		Map<String,Object> portfolio = new HashMap<String, Object>();
 			Portfolio port =  _pR.findByUserId(id);
+		if(port != null) {
 			List<Experience> exps = port.getExperiences();
 			List<Education> educations = port.getEducations();
-		if(port != null) {
 			port.setUser(null);
 			for(Experience exp : exps) {
 				exp.setPortfolio(null);
@@ -72,7 +72,7 @@ public class PortfolioService {
 				edu.setPortfolio(null);
 			}
 			port.setEducations(educations);
-			Map<String, String> map = oMapper.convertValue(port, Map.class);
+			Map<String, Object> map = oMapper.convertValue(port, Map.class);
 			map.put("success", "you have your portfolio");
 			return map;
 		}

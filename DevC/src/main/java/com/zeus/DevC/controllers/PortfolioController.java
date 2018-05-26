@@ -1,6 +1,7 @@
 package com.zeus.DevC.controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,9 +56,9 @@ public class PortfolioController {
 	}
 	
 	@GetMapping("/portfolio/{id}")
-	public String userPortfolio(HttpSession session, @PathVariable("id") long id) {
-		String map2 = gson.toJson(_pS.userPorfolio(id));
-		return map2;
+	public Map<String, Object> userPortfolio(HttpSession session, @PathVariable("id") long id) {
+		System.out.println(new Date());
+		return _pS.userPorfolio(id);
 	}
 	
 	@GetMapping("/by/Handle/{handle}")
