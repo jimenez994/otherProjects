@@ -57,9 +57,8 @@ public class PortfolioService {
 		msg.put("fail", "You already have a portfolio");
 		return msg;
 	}
-	public Map<String,Object> userPorfolio(long id) {
-		Map<String,Object> portfolio = new HashMap<String, Object>();
-			Portfolio port =  _pR.findByUserId(id);
+	public Portfolio userPorfolio(long id) {
+		Portfolio port =  _pR.findByUserId(id);
 		if(port != null) {
 			List<Experience> exps = port.getExperiences();
 			List<Education> educations = port.getEducations();
@@ -72,12 +71,9 @@ public class PortfolioService {
 				edu.setPortfolio(null);
 			}
 			port.setEducations(educations);
-			Map<String, Object> map = oMapper.convertValue(port, Map.class);
-			map.put("success", "you have your portfolio");
-			return map;
+			return port;
 		}
-		portfolio.put("noProfile","Sorry you dont hava a profolio");
-		return portfolio;
+		return null;
 	}
 	
 	public Portfolio findByHandle(String handle) {

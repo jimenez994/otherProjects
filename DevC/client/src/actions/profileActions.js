@@ -10,12 +10,12 @@ export const getCurrentProfile = () => dispatch => {
         IdKey = localStorage.IdKey;
         axios.get(`http://localhost:8080/p/portfolio/${IdKey}`)
             .then( res => {
-                if(res.data.success){
+                if(res.data != null){
                     dispatch({
                     type: GET_PROFILE,
                     payload: res.data
                     });
-                }else if(res.data.noProfile){
+                }else if(res.data == null){
                     dispatch({
                         type: GET_PROFILE,
                         payload: {}

@@ -30,17 +30,19 @@ public class ExperienceController {
 	
 	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); // your format
 	
-	
 	@RequestMapping("/new/{id}")
 	public Map<String, String> newExperience(@RequestBody Map<String, String> exp, @PathVariable long id) throws ParseException{
-		System.out.println(exp);
 		User user = _Us.findById(id);
-		Date dateFrom = format.parse((String)exp.get("startDate"));
-		System.out.println(dateFrom);
-		Experience newExp= new Experience(exp.get("title"), exp.get("description"), exp.get("company"), exp.get("location"), dateFrom, dateFrom, user.getPortfolio());
-//		newExp.setStartFrom(dateFrom);
-//		newExp.setPortfolio(user.getPortfolio());
+		Date dateFrom = null;
+		Date toEnd = null;
+		if((String)exp.get("startDate") != null && (String)exp.get("startDate") != "") {
+			System.out.println("got here");
+			dateFrom = format.parse((String)exp.get("startDate"));
+		}
+		if((String)exp.get("toEnd") != null && (String)exp.get("toEnd") != "") {
+			toEnd = format.parse((String)exp.get("toEnd"));
+		}
+		Experience newExp= new Experience(exp.get("title"), exp.get("description"), exp.get("company"), exp.get("location"), dateFrom, toEnd, user.getPortfolio());
 		return _eS.createExp(newExp);
-//		return null;
 	}
 }

@@ -2,31 +2,38 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
+import Moment from 'react-moment';
 class Experience extends Component {
   render() {
       const experience = this.props.experience.map(exp => (
         <tr key={exp.id}>
-            <td>{exp.company}</td>
-            <td>{exp.title}</td>
-            <td>{exp.startFrom} - {exp.toEnd}</td>
-            <td> <button className="btn btn-danger">Delete</button></td>
+          <td>{exp.company}</td>
+          <td>{exp.title}</td>
+          <td>
+            <Moment format="YYYY/MM/DD">{exp.startFrom}</Moment> - {" "}
+            {exp.toEnd === null ? ('Now') : (
+              <Moment format="YYYY/MM/DD">{exp.toEnd}</Moment>
+            )}
+          </td>
+          <td>
+            {" "}
+            <button className="btn btn-danger">Delete</button>
+          </td>
         </tr>
       ));
-      console.log(this.props.experience)
     return (
       <div>
         <h4 className="mb-4">Experience Credentials</h4>
         <table className="table">
             <thead>
-                <tr>Company</tr>
-                <tr>Title</tr>
-                <tr>Years</tr>
-                <tr></tr>                
-            </thead>
-            <tbody>
+                <tr>
+                  <th>Company</th>
+                  <th>Title</th>
+                  <th>Years</th>
+                  <th></th> 
+                </tr>               
                 {experience}
-            </tbody>
+            </thead>
         </table>
       </div>
     )

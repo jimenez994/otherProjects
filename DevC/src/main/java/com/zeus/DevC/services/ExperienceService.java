@@ -23,6 +23,9 @@ public class ExperienceService {
 		if(exp.getCompany() == "" || exp.getCompany() == null) {
 			msg.put("company", "Company cannot be empty");
 		}
+		if(exp.getStartFrom() == null) {
+			msg.put("startFrom", "Start from cannot be empty");
+		}
 		if(msg.isEmpty()) {
 			_Er.save(exp);
 			msg.put("success", "You successfully created an experience");
